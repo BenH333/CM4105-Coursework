@@ -1,0 +1,37 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.icon{
+    color: $laravel-red;
+    border-color: $laravel-red;
+    height:100%;
+    width:100%;
+}
+.icon:hover{
+    color: $body-bg;
+    background-color: $laravel-red;
+    border-color: $laravel-red;
+    height:100%;
+    width:100%;
+}
+.fa-bicycle, .fa-line-chart, .fa-sign-in{
+    padding: 10%;
+    font-size: 10em!important;
+
+}
+html,
+body {
+    height: 100%;
+}
+    .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
