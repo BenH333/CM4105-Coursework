@@ -10024,6 +10024,13 @@ h3 {
   font-size: 10em !important;
 }
 
+.search-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-bottom: 2em;
+}
+
 html,
 body {
   height: 100%;
