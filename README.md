@@ -17,12 +17,14 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 Linux, NGinx, MySQL, Php (LEMP)
 
 ### Host:
-Herkou
+#### Herkou
 http://ben-laravel-coursework.herokuapp.com/
 
 ### Frameworks used
-Laravel - php routing, controller, database migrations and blade templates
-React - front end to retieve stolen bikes from an api
+#### Laravel
+Php routing, controller, database migrations and blade templates
+#### React
+Front end to retieve stolen bikes from an api
 
 ### Bike Index API V3 used
 https://bikeindex.org/documentation/api_v3
