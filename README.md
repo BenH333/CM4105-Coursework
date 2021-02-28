@@ -12,21 +12,21 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-##Coursework Structure
-###Stack Used:
+## Coursework Structure
+### Stack Used:
 Linux, NGinx, MySQL, Php (LEMP)
 
-###Host:
+### Host:
 Herkou
 http://ben-laravel-coursework.herokuapp.com/
 
-###Frameworks used
+### Frameworks used
 Laravel - php routing, controller, database migrations and blade templates
 React - front end to retieve stolen bikes from an api
 
-###Bike Index API V3 used
+### Bike Index API V3 used
 https://bikeindex.org/documentation/api_v3
 
-###Database
+### Database
 MySQL accessed through MySQL workbench and database migrations through PuTTY
 User Authentication (Database table, middleware and frontend) created with Laravel starter kit - https://laravel.com/docs/8.x/authentication
