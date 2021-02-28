@@ -7,6 +7,24 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+/* 
+    General CSS
+*/
+html,
+body {
+    height: 100%;
+}
+    .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter-form{
+}
+/* -----------------------
+ Home Page
+*/
 .icon{
     color: $laravel-red;
     border-color: $laravel-red;
@@ -24,21 +42,30 @@
 .fa-bicycle, .fa-line-chart, .fa-sign-in{
     padding: 10%;
     font-size: 10em!important;
-
 }
-.search-container{
+/*-------------------------
+    bike search container responsive size on all devices
+*/
+.icon-small{
+    color: $laravel-red;
+    border-color: $laravel-red;
+}
+.icon-small:hover{
+    color: $body-bg;
+    background-color: $laravel-red;
+    border-color: $laravel-red;
+}
+.search-container, .filter-form ,.form-horizontal{
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
     margin-bottom: 2em;
 }
-html,
-body {
-    height: 100%;
+.form-control{
+    margin-right: 1em;
+    margin-left:1em;
 }
-    .container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media only screen and (min-width: 1000px) {
+    .search-container, .filter-form ,.form-horizontal{
+       width:70%;
+    }
 }
