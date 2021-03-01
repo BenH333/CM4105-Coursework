@@ -12,11 +12,14 @@ export default class Search extends React.Component {
             bikes: null,
             location: 'Aberdeen',
             distance: '10',
-            serial: ''
+            serial: '',
+            random: 0
         };
         
         this.filteredSearch = this.filteredSearch.bind(this);
         this.fetchRequest = this.fetchRequest.bind(this);
+        this.renderItems = this.renderItems.bind(this);
+
     }
 
     //handle methods will process filter async requests
@@ -35,7 +38,86 @@ export default class Search extends React.Component {
                 distance: e.target.value
         });
     }
+
+    handleClick = (e) => {
+    //record clicks then redirect user
+        // console.log(e.target.className);
+        // console.log(e.target.name);
+        let token = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+        const url = e.target.name;
+
+        $.ajax({
+            url: '/search/addclick',
+            type: 'POST',
+            data: {
+                _token: token,
+                name: e.target.id
+            },
+            
+            dataType: 'JSON',
     
+            success: (response) => { 
+
+                console.log("success");
+                console.log(response);
+                
+                window.location.href = url;
+            },
+            error: (response) => {
+
+                console.log("error");
+                console.log(response);
+                
+            }
+
+        });
+    }
+   
+    renderItems(){
+        var content=[];
+        this.state.bikes.map(function(item, i){
+            const min = 1;
+            const max = 100;
+            const rand = Math.floor(Math.random() * 101)// returns a random integer from 0 to 100 
+            // // console.log('test',i);
+            var dynamicContent = [];
+            
+            dynamicContent.push(<li className="list-group-item" key={i+'title'}>{item.title}</li>);
+            if(item.large_img){
+                dynamicContent.push(<li className="list-group-item" key={i+'img'}><img className="img-fluid img-thumbnail"src={item.large_img}/></li>);
+            }
+            if(item.serial){
+                dynamicContent.push(<li className="list-group-item" key={i+'serial'}>Bike Serial: {item.serial}</li>);
+            }
+            if(item.description){
+                dynamicContent.push(<li className="list-group-item" key={i+'description'}>{item.description}</li>);
+            }
+            if(rand >= 50){
+                dynamicContent.push(
+                                    <li className="list-group-item" key={i+'description'}>
+                                        <button className="btn btn-primary" name={item.url} id="blue" onClick={this.handleClick}>Contact Owner</button>
+                                    </li>
+                                    );
+            }else{
+                dynamicContent.push(
+                                    <li className="list-group-item" key={i+'description'}>
+                                        <button className="btn btn-success" name={item.url} id="green" onClick={this.handleClick}>Contact Owner</button>
+                                    </li>
+                                    );
+            }
+            const listContent = (
+                <div className="search-container">
+                    <ul className="list-group">
+                        {dynamicContent}
+                    </ul>
+                </div>
+            );
+            content.push(listContent);
+
+          }, this)
+          return content;
+    }
+
     //fetch the url, await, and set global variables
     async fetchRequest(url){
         const response = await fetch(url);
@@ -49,9 +131,9 @@ export default class Search extends React.Component {
         var url="";
         this.setState({ loading: true });
         if(this.state.serial != null){
-             url ="https://bikeindex.org:443/api/v3/search?location="+this.state.location+"&distance="+this.state.distance+"&serial="+this.state.serial+"&stolenness=proximity"; 
+             url = "https://bikeindex.org:443/api/v3/search?location="+this.state.location+"&distance="+this.state.distance+"&serial="+this.state.serial+"&stolenness=proximity"; 
         } else{
-             url ="https://bikeindex.org:443/api/v3/search?location="+this.state.location+"&distance="+this.state.distance+"&stolenness=proximity";
+             url = "https://bikeindex.org:443/api/v3/search?location="+this.state.location+"&distance="+this.state.distance+"&stolenness=proximity";
         }
         this.fetchRequest(url);
 
@@ -64,6 +146,7 @@ export default class Search extends React.Component {
         this.fetchRequest(url);
         // console.log(this.state.bikes);
         // console.log(this.state.loading, this.state.bike);
+        
     }
 
     //render when ready
@@ -103,48 +186,9 @@ export default class Search extends React.Component {
                         </div>
                         <input className="btn icon-small"type='submit' placeholder="Submit"/>
                     </form>
-            </div>
+                </div>
             {
-            this.state.bikes.map(function(item, i){
-                // console.log('test',i);
-                if((!item.description) && item.large_img){
-                    return <div className="search-container">
-                                <ul className="list-group">
-                                    <li className="list-group-item">{item.title}</li>
-                                    <li className="list-group-item"><img className="img-fluid img-thumbnail"src={item.large_img}/></li>
-                                    <li className="list-group-item">Bike Serial: {item.serial}</li>
-                                    <a href={item.url}><li className="list-group-item"><p className="btn btn-primary">Contact Owner</p></li></a>
-                                </ul>
-                           </div>
-                } else if((!item.large_img) && item.description){
-                    return <div className="search-container">
-                                <ul className="list-group">
-                                    <li className="list-group-item">{item.title}</li>
-                                    <li className="list-group-item">{item.description}</li>
-                                    <li className="list-group-item">Bike Serial: {item.serial}</li>
-                                    <a href={item.url}><li className="list-group-item"><p className="btn btn-primary">Contact Owner</p></li></a>
-                                </ul>
-                           </div>
-                } else if ((!item.large_img) && (!item.description)){
-                    return <div className="search-container">
-                                <ul className="list-group">
-                                    <li className="list-group-item">{item.title}</li>
-                                    <li className="list-group-item">Bike Serial: {item.serial}</li>
-                                    <a href={item.url}><li className="list-group-item"><p className="btn btn-primary">Contact Owner</p></li></a>
-                                </ul>
-                           </div>
-                } else{
-                    return <div className="search-container">
-                                <ul className="list-group">
-                                    <li className="list-group-item">{item.title}</li>
-                                    <li className="list-group-item"><img className="img-fluid img-thumbnail"src={item.large_img}/></li>
-                                    <li className="list-group-item">{item.description}</li>
-                                    <li className="list-group-item">Bike Serial: {item.serial}</li>
-                                    <a href={item.url}><li className="list-group-item"><p className="btn btn-primary">Contact Owner</p></li></a>
-                                </ul>
-                            </div>
-                }
-              })
+                this.renderItems()
             }
             </div>
         );

@@ -19,7 +19,7 @@
                     <h1>Sign in to View Dashboard</h1>
                 <div><br>
                 <div class="col ">
-                    <a class="icon btn btn-outline-secondary" >  <i class="fa fa-sign-in"></i></a>
+                    <a class="icon btn btn-outline-secondary" href="{{ route('login') }}">  <i class="fa fa-sign-in"></i></a>
                 </div><br><br>
             @else
 
@@ -28,7 +28,7 @@
                 <div><br>
 
                 <div class="col ">
-                    <a class="icon btn btn-outline-secondary">  <i class="fa fa-line-chart"></i></a>
+                    <a class="icon btn btn-outline-secondary" href="{{ url('/dashboard') }}">  <i class="fa fa-line-chart"></i></a>
                 </div><br><br>
             @endguest
        
