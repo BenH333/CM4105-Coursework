@@ -28,6 +28,8 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
-        "babel": "^6.23.0"
+        "babel": "^6.23.0",
+        "chart.js": "^2.9.4",
+        "react-chartjs": "^1.2.0"
     }
 }

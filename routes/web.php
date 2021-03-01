@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,10 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/search', [SearchController::class, 'index']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::post('/search/addclick', [DashboardController::class, 'addClick']);
+
+Route::get('/search/getClicks', [DashboardController::class, 'getClicks']);
+
