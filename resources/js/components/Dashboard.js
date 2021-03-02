@@ -226,7 +226,7 @@ export default class Dashboard extends React.Component {
                   />
               </div>
             </div>
-            
+
             <div className="container">
 
               <div style={{ width: 500, height: 300 }}>
@@ -250,4 +250,4 @@ export default class Dashboard extends React.Component {
     }
 }
 //render retrieved results to html
-ReactDOM.render(<Dashboard />, document.getElementById('search'));
+ReactDOM.render(<Dashboard />, document.getElementById('dashboard'));

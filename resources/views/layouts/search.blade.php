@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div id="search"></div>
-
+<body class="antialiased">
+    <div id="search"></div>
+</body>
 @endsection
 <script src="{{ asset('js/searchloader.js') }}" defer></script>

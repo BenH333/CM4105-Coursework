@@ -152,11 +152,11 @@ export default class Search extends React.Component {
     //render when ready
     render() {
         if (this.state.loading) {
-            return <div className="search-container">loading...</div>;
+            return <h1 className="container">Loading may take up to 1 minute...</h1>;
         }
 
         if (!this.state.bikes) {
-            return <div className="search-container">No stolen bikes here.</div>
+            return <h1 className="container">No stolen bikes here.</h1>
         }
 
         return (
