@@ -47,7 +47,7 @@ export default class Search extends React.Component {
         const url = e.target.name;
 
         $.ajax({
-            url: '/search/addclick',
+            url: '/dashboard/addclick',
             type: 'POST',
             data: {
                 _token: token,

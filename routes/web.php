@@ -22,13 +22,27 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+//search route
 Route::get('/search', [SearchController::class, 'index']);
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+//home routes
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/profile', [HomeController::class, 'profile']);
+Route::get('/logout', [HomeController::class, 'logout']);
+Route::get('/deleteAccount', [HomeController::class, 'deleteUser']);
 
-Route::post('/search/addclick', [DashboardController::class, 'addClick']);
+//dashboard routes
+Route::group(['prefix'=>'dashboard','as'=>'dashboard.'], function(){
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::post('/addclick', [DashboardController::class, 'addClick']);
 
-Route::get('/search/getClicks', [DashboardController::class, 'getClicks']);
+    Route::get('/getClicks', [DashboardController::class, 'getClicks']);
+    Route::get('/getRecentClicks', [DashboardController::class, 'getRecentClicks']);
+    Route::get('/getTimeClicks', [DashboardController::class, 'getTimeClicks']);
+    Route::get('/deleteClicks', [DashboardController::class, 'deleteClicks']);
+});
+
+
+
+
 
