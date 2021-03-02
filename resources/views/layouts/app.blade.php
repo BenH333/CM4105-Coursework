@@ -30,7 +30,6 @@
 <body>
     <div id="app">
         <nav class="navbar">
-            <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -55,7 +54,6 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
         </nav>
 
         <main class="py-4">
