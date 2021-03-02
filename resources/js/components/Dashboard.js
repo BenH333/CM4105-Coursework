@@ -22,6 +22,7 @@ export default class Dashboard extends React.Component {
     }
 
     clicksChart() {
+      //general clicks recorded
         const node = this.generalCanvas;
         var data = {
                 labels: ["Number of Clicks"],
@@ -52,6 +53,7 @@ export default class Dashboard extends React.Component {
               }]
             }
           };
+          //render chart
         var overallChart = new Chart(node, {
                 type: "bar",
                 data: data,
@@ -154,8 +156,8 @@ export default class Dashboard extends React.Component {
     
             success: (data) => { 
 
-                console.log("success");
-                console.log(data);
+                // console.log("success");
+                // console.log(data);
                 this.setState({greenClicks: data.greenClicks, blueClicks: data.blueClicks});
                 // console.log(this.state.blueClicks);
                 <div>
@@ -164,8 +166,8 @@ export default class Dashboard extends React.Component {
             },
             error: (data) => {
 
-                console.log("error");
-                console.log(data);
+                // console.log("error");
+                // console.log(data);
                 
             }
         });
@@ -177,8 +179,8 @@ export default class Dashboard extends React.Component {
   
           success: (data) => { 
 
-              console.log("success");
-              console.log(data);
+              // console.log("success");
+              // console.log(data);
               this.setState({recentGreen: data.greenClicks, recentBlue: data.blueClicks});
               <div>
                 {this.recentClicksChart()}
@@ -186,8 +188,8 @@ export default class Dashboard extends React.Component {
           },
           error: (data) => {
 
-              console.log("error");
-              console.log(data);
+              // console.log("error");
+              // console.log(data);
               
           }
        });
