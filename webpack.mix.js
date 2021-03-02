@@ -19,3 +19,5 @@ mix.js('resources/js/searchloader.js', 'public/js')
     .react();
     
 mix.js('resources/js/dashboardloader.js', 'public/js');
+
+mix.js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps();
