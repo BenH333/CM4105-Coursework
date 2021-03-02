@@ -41,8 +41,7 @@ export default class Search extends React.Component {
 
     handleClick = (e) => {
     //record clicks then redirect user
-        // console.log(e.target.className);
-        // console.log(e.target.name);
+        
         let token = document.querySelector("meta[name='csrf-token']").getAttribute("content");
         const url = e.target.name;
 
@@ -58,15 +57,15 @@ export default class Search extends React.Component {
     
             success: (response) => { 
 
-                console.log("success");
-                console.log(response);
+                // console.log("success");
+                // console.log(response);
                 
                 window.location.href = url;
             },
             error: (response) => {
 
-                console.log("error");
-                console.log(response);
+                // console.log("error");
+                // console.log(response);
                 
             }
 
@@ -123,11 +122,11 @@ export default class Search extends React.Component {
         const response = await fetch(url);
         const data = await response.json();
         this.setState({ bikes: data.bikes, loading: false });
-        console.log(this.state.bikes);
+        // console.log(this.state.bikes);
     }
 
     async filteredSearch (){
-        console.log(this.state.location);
+        // console.log(this.state.location);
         var url="";
         this.setState({ loading: true });
         if(this.state.serial != null){
@@ -137,7 +136,7 @@ export default class Search extends React.Component {
         }
         this.fetchRequest(url);
 
-        console.log(url);
+        // console.log(url);
     }
 
     //default results on page load..
@@ -152,11 +151,11 @@ export default class Search extends React.Component {
     //render when ready
     render() {
         if (this.state.loading) {
-            return <div className="search-container">loading...</div>;
+            return <h1 className="container">Loading may take up to 1 minute...</h1>;
         }
 
         if (!this.state.bikes) {
-            return <div className="search-container">No stolen bikes here.</div>
+            return <h1 className="container">No stolen bikes here.</h1>
         }
 
         return (

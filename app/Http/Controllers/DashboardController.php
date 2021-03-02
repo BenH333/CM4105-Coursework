@@ -15,46 +15,6 @@ class DashboardController extends Controller
     public function index()
     {
         //return dashboard page
-        // $buttonClicks = ViewClicks::where('id',1);
-
-        // $blueClicks = ViewClicks::where('colour','blue')->where('created_at', '>', Carbon::now()->subDay())->get();
-        // $greenClicks = ViewClicks::where('colour','green')->where('created_at', '>', Carbon::now()->subDay())->get();
-        // foreach($blueClicks as $click){
-        //     dd($click->created_at->format('Y-m-d'));
-        // }
-
-        // $clicks = ViewClicks::get();
-        // $blue=[];
-        // $green=[];
-        // $blueTime=[];
-        // $greenTime=[];
-
-        // foreach($clicks as $click){
-        //     if($click->colour == "blue"){
-        //         $time = $click->created_at->format('Y-m-d');
-        //         if(!(in_array($time, $blueTime))){
-        //             array_push($blueTime,$time);
-        //         }
-        //     }
-        //     if($click->colour == "green"){
-        //         $time = $click->created_at->format('Y-m-d');
-        //         if(!(in_array($time, $greenTime))){
-        //             array_push($greenTime,$time);
-        //         }
-        //     }
-        // }
-
-        // foreach($blueTime as $time){
-        //     $blueClicks = ViewClicks::where('colour','blue')->whereDate('created_at','=',$time)->get()->count();
-        //     array_push($blue,[$blueClicks,$time]);
-        // }
-        // foreach($greenTime as $time){
-        //     $greenClicks = ViewClicks::where('colour','green')->whereDate('created_at','=',$time)->get()->count();
-        //     array_push($green,[$greenClicks,$time]);
-        // }
-
-        // dd( response()->json(['blueClicks' => $blue, 'greenClicks' => $green]) );
-
         return view('layouts/dashboard');
     }
 
