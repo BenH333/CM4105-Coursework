@@ -44,5 +44,5 @@ Route::group(['prefix'=>'dashboard','as'=>'dashboard.'], function(){
 
 
 
-
+\Illuminate\Support\Facades\URL::forceScheme('https');
 

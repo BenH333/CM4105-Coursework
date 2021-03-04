@@ -29,7 +29,7 @@
                     <div class="card-header">Delete Account</div>
 
                     <div class="card-body">
-                            <a class="btn icon-small" href="deleteAccount">Delete Account</a>
+                        <a class="btn icon-small" href="deleteAccount">Delete Account</a>
                     </div>
                 </div>
             </div>
