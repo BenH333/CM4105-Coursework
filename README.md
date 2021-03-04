@@ -1,3 +1,5 @@
+# Master branch is the most up to date (main does not allow commits)
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -11,7 +13,7 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
-# !Master branch is the most up to date (main does not allow commits)
+
 ## Coursework Structure
 ### Stack Used:
 Linux, NGinx, MySQL, Php (LEMP)
@@ -31,4 +33,4 @@ https://bikeindex.org/documentation/api_v3
 
 ### Database
 MySQL accessed through MySQL workbench and database migrations through PuTTY
-User Authentication (Database table, middleware and frontend) created with Laravel starter kit - https://laravel.com/docs/8.x/authentication
+User Authentication (Database table, PHP classes, controllers and frontend) created with Laravel starter kit - https://laravel.com/docs/8.x/authentication
