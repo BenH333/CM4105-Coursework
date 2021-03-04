@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://ben-laravel.test'),
+    'url' => env('APP_URL', 'https://ben-laravel-coursework.herokuapp.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
