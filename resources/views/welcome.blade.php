@@ -17,6 +17,7 @@
             @guest
                 <div class="col">
                     <h1>Sign in to View Dashboard</h1>
+                    <p>The number of green and blue button search clicks are anonymously recorded to understand user activity.</p>
                 <div><br>
                 <div class="col ">
                     <a class="icon btn btn-outline-secondary" href="{{ route('login') }}">  <i class="fa fa-sign-in"></i></a>
