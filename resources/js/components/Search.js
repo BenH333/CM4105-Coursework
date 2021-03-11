@@ -162,7 +162,7 @@ export default class Search extends React.Component {
             <div className="filter-form">
                 <div className="App">
                     <form className="form-horizontal" onSubmit={this.filteredSearch}>
-                    <h2>Current City: {this.state.location}</h2>
+                        <h2>Current City: {this.state.location}</h2>
                         <div className="form-group row">
                             <div className="col-xs-4">
                                 <input className="form-control " label='Filter City: ' placeholder='Enter a city name' onChange={this.handleCity}/>
@@ -183,8 +183,18 @@ export default class Search extends React.Component {
                                 <input className="form-control " label='Filter Serial Number: ' placeholder='Enter a bike Serial Number' onChange={this.handleSerial}/>
                             </div>
                         </div>
-                        <input className="btn icon-small"type='submit' placeholder="Submit"/>
+                        <div className="form-group row">
+                            <div className="col-xs-4">
+                                <input className="btn icon-small"type='submit' placeholder="Submit"/>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <div className="col-xs-4">
+                                <small>Results are retrieved from the Bike Index API <a href="https://bikeindex.org">Visit here</a></small>
+                            </div>
+                        </div>
                     </form>
+                    
                 </div>
             {
                 this.renderItems()

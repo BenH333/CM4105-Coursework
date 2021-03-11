@@ -34,25 +34,25 @@ https://bikeindex.org/documentation/api_v3
 MySQL accessed through MySQL workbench and database migrations through PuTTY
 
 ### Main files & folders
-routes/ 
-           -> Web.php handles routing
+#### routes/ 
+- Web.php handles routing
 
-resources/ 
-           -> sass (css & bootstrap render)
-           -> views (php template files that render html)
-           -> js (react files)
+#### resources/ 
+- sass (css & bootstrap render)
+- views (php template files that render html)
+- js (react files)
 
-composer.json 
-            -> includes laravel ui scaffolding for Login/Register templates
+#### composer.json 
+- includes laravel ui scaffolding for Login/Register templates
 
-package.json 
-            -> includes all packages installed (e.g. jquery, bootstrap, react, chartjs)
+#### package.json 
+- includes all packages installed (e.g. jquery, bootstrap, react, chartjs)
 
-database/migrations/ 
-            -> shows how tables are defined, in Web Server SSH: "php artisan migrate" runs the migrations to create tables.
+#### database/migrations/ 
+- shows how tables are defined, in Web Server SSH: "php artisan migrate" runs the migrations to create tables.
 
-Http/Controllers/ 
-            -> shows the controllers that are called from web routes. These controllers can return 'blade' templates or for e.g. retrieve data from an ajax call
+#### Http/Controllers/ 
+- shows the controllers that are called from web routes. These controllers can return 'blade' templates or for e.g. retrieve data from an ajax call
 
-Models/ 
-            -> creates a Model Class for tables (Users, and ViewClicks) which can be accessed by controller
+#### Models/ 
+- creates a Model Class for tables (Users, and ViewClicks) which can be accessed by controller
