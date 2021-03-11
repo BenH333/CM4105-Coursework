@@ -19,7 +19,7 @@ Linux, NGinx, MySQL, Php (LEMP)
 
 ### Host:
 #### Herkou
-http://ben-laravel-coursework.herokuapp.com/
+https://ben-laravel-coursework.herokuapp.com/
 
 ### Frameworks used
 #### Laravel version 8.0
