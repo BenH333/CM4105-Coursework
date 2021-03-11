@@ -164,13 +164,13 @@ export default class Search extends React.Component {
                     <form className="form-horizontal" onSubmit={this.filteredSearch}>
                         <h2>Current City: {this.state.location}</h2>
                         <div className="form-group row">
-                            <div className="col-xs-4">
-                                <input className="form-control " label='Filter City: ' placeholder='Enter a city name' onChange={this.handleCity}/>
+                            <div className="col-xs-4 ml-2">
+                                <input className="form-control" label='Filter City: ' placeholder='Enter a city name' onChange={this.handleCity}/>
                             </div>
                         </div>
                         <div className="form-group row">
-                            <div className="col-xs-4">
-                                <select className="form-control " value={this.state.value} onChange={this.handleDistance}>
+                            <div className="col-xs-4 ml-2">
+                                <select className="form-control" value={this.state.value} onChange={this.handleDistance}>
                                     <option value="10">10 miles</option>
                                     <option value="50">50 miles</option>
                                     <option value="100">100 miles</option>
@@ -179,18 +179,18 @@ export default class Search extends React.Component {
                             </div>
                         </div>
                         <div className="form-group row">
-                            <div className="col-xs-4">
-                                <input className="form-control " label='Filter Serial Number: ' placeholder='Enter a bike Serial Number' onChange={this.handleSerial}/>
+                            <div className="col-xs-4 ml-2">
+                                <input className="form-control" label='Filter Serial Number: ' placeholder='Enter a bike Serial Number' onChange={this.handleSerial}/>
                             </div>
                         </div>
                         <div className="form-group row">
-                            <div className="col-xs-4">
-                                <input className="btn icon-small"type='submit' placeholder="Submit"/>
+                            <div className="col-xs-4 ml-2">
+                                <input className="form-control btn icon-small"type='submit' placeholder="Submit"/>
                             </div>
                         </div>
                         <div className="form-group row">
-                            <div className="col-xs-4">
-                                <small>Results are retrieved from the Bike Index API <a href="https://bikeindex.org">Visit here</a></small>
+                            <div className="col-xs-4 ml-2">
+                                <small className="form-control">Results are retrieved from the Bike Index API <a href="https://bikeindex.org">Visit here</a></small>
                             </div>
                         </div>
                     </form>
