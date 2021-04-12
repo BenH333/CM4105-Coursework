@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ViewClicks;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -15,7 +16,11 @@ class DashboardController extends Controller
     public function index()
     {
         //return dashboard page
-        return view('layouts/dashboard');
+        if(Auth::user()){
+            return view('layouts/dashboard');
+        } else{
+            return redirect('home');
+        }
     }
 
     /**
