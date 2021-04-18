@@ -28,8 +28,8 @@ Route::get('/search', [SearchController::class, 'index']);
 //home routes
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/profile', [HomeController::class, 'profile']);
-Route::get('/logout', [HomeController::class, 'logout']);
-Route::get('/deleteAccount', [HomeController::class, 'deleteUser']);
+Route::post('/logout', [HomeController::class, 'logout']);
+Route::post('/deleteAccount', [HomeController::class, 'deleteUser']);
 
 //dashboard routes
 Route::group(['prefix'=>'dashboard','as'=>'dashboard.'], function(){
@@ -39,7 +39,7 @@ Route::group(['prefix'=>'dashboard','as'=>'dashboard.'], function(){
     Route::get('/getClicks', [DashboardController::class, 'getClicks']);
     Route::get('/getRecentClicks', [DashboardController::class, 'getRecentClicks']);
     Route::get('/getTimeClicks', [DashboardController::class, 'getTimeClicks']);
-    Route::get('/deleteClicks', [DashboardController::class, 'deleteClicks']);
+    Route::post('/deleteClicks', [DashboardController::class, 'deleteClicks']);
 });
 
 
