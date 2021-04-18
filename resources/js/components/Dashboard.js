@@ -63,6 +63,36 @@ export default class Dashboard extends React.Component {
         return overallChart;
     }    
 
+    handleDelete = () => {
+      //record clicks then redirect user
+          
+          let token = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+          console.log("success");
+          $.ajax({
+              url: '/dashboard/deleteClicks',
+              type: 'POST',
+              data: {
+                  _token: token,
+              },
+              
+              dataType: 'JSON',
+      
+              success: (response) => { 
+  
+                  console.log("success");
+                  console.log(response);
+                  window.location.reload();
+              },
+              error: (response) => {
+  
+                  // console.log("error");
+                  // console.log(response);
+                  
+              }
+  
+          });
+      }
+
     recentClicksChart() {
       const node = this.recentCanvas;
       var data = {
@@ -245,7 +275,7 @@ export default class Dashboard extends React.Component {
 
             <div className="container">
                 <label>Delete all click data: &nbsp;</label>
-                <a href="/search/deleteClicks" className="btn icon-small"><i className="fa fa-trash"></i>Reset</a>
+                <button onClick={this.handleDelete} className="btn icon-small"><i className="fa fa-trash"></i>Reset</button>
             </div>
         </div>
         )
