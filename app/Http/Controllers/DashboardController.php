@@ -108,8 +108,13 @@ class DashboardController extends Controller
     /**
      * Remove all click records
      */
-    public function deleteClicks(){
+    public function deleteClicks(Request $request){
+        //validate post request
+        $request->validate([
+            '_token' => 'required',
+        ]);
+
         ViewClicks::whereNotNull('id')->delete();
-        return view('layouts/dashboard');
+        return response()->json(['success' => true]);
     }
 }
