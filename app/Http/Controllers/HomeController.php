@@ -39,7 +39,11 @@ class HomeController extends Controller
      * Logout the authorised user
      *
      */
-    public function logout(){
+    public function logout(Request $request){
+        $request->validate([
+            '_token' => 'required',
+        ]);
+
         if (Auth::user())
         {
             Auth::logout();
@@ -51,13 +55,16 @@ class HomeController extends Controller
      * Hard delete the authorised user
      *
      */
-    public function deleteUser(){
-        $user = Auth::user();
+    public function deleteUser(Request $request){
+        $request->validate([
+            '_token' => 'required',
+        ]);
+
         //check that current user exists
         if (Auth::user())
         {
             Auth::logout();
-            $user->delete();
+            Auth::user()->delete();
         }
         return view('/welcome');
     }

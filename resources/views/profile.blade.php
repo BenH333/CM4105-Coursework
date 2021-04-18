@@ -19,19 +19,25 @@
                         {{ __('You are logged in!') }}
 
                         <br><br>
-                        <a class="btn btn-outline-info"href="logout">Logout</a>
+                        <form method="POST" action="/logout">
+                            @csrf
+                            <button type="submit" class="btn btn-outline-info">Logout</button>
+                        </form>
                     </div>
-
                     
                 </div>
                 <br>
                 <div class="card">
                     <div class="card-header">Delete Account</div>
-
-                    <div class="card-body">
-                        <a class="btn icon-small" href="deleteAccount">Delete Account</a>
+                        <div class="card-body">
+                            <form method="POST" action="/deleteAccount">
+                                @csrf
+                                <button type="submit" class="btn icon-small">Delete Account</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
