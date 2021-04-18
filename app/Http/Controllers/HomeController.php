@@ -60,12 +60,11 @@ class HomeController extends Controller
             '_token' => 'required',
         ]);
 
-        $user = Auth::user();
         //check that current user exists
         if (Auth::user())
         {
             Auth::logout();
-            $user->delete();
+            Auth::user()->delete();
         }
         return view('/welcome');
     }
